@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PatientDemographics from "@/components/PatientDemographics.vue";
 import { InjectionKeys } from "@/constants";
-import Patient from "@/models/Patient";
+import type Patient from "@/models/Patient";
 import type { PatientService } from "@/services/PatientService";
 import { inject, onBeforeMount, ref } from "vue";
 

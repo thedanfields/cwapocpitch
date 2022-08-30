@@ -1,36 +1,31 @@
 <script setup lang="ts">
+import { NCard, NDescriptions, NDescriptionsItem } from "naive-ui";
+
 import type Patient from "@/models/Patient";
+import PatientTagList from "./PatientTagList.vue";
+import GenderIcon from "./GenderIcon.vue";
 
 interface Props {
   patient: Patient;
 }
 
 const props = defineProps<Props>();
+const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
 </script>
 <template>
-  <div class="card">
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-48x48">
-            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-4">
-            {{ props.patient.first_name }} {{ props.patient.last_name }}
-          </p>
-          <p class="subtitle is-6">{{ props.patient.dob }}</p>
-        </div>
-      </div>
-
-      <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-        iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a>
-        <a href="#">#responsive</a>
-        <br>
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-      </div>
-    </div>
-  </div>
+  <n-card :title="displayName">
+    <template #header-extra>
+      {{ props.patient.age }} ({{ props.patient.dob.toLocaleDateString() }})
+      <GenderIcon :gender="props.patient.gender" />
+    </template>
+    <n-descriptions label-placement="top" title="patient information:">
+      <n-descriptions-item label="Institution">
+        {{ props.patient.institution }}
+      </n-descriptions-item>
+      <n-descriptions-item label="Medical Record Number">
+        {{ props.patient.mrn }}
+      </n-descriptions-item>
+    </n-descriptions>
+    <template #footer> <PatientTagList :tags="props.patient.tags" /> </template>
+  </n-card>
 </template>
