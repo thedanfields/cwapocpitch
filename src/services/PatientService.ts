@@ -1,7 +1,7 @@
 import type Patient from "@/models/Patient";
 import type { IDataService } from "./DataService";
 
-interface IPatientService {
+export interface IPatientService {
   getById(patientId: string): Promise<Patient>;
 }
 

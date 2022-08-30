@@ -15,7 +15,7 @@ describe("DataService", () => {
   };
 
   const testConfigService = new ConfigService(
-    new Map([["apiRootUrl", "https://api.test.com/"]])
+    new Map([["apiRootUrl", "https://TestDataHandlers.ts/"]])
   );
   const dataService = new DataService(testConfigService);
 

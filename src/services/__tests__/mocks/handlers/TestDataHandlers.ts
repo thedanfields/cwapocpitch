@@ -10,7 +10,7 @@ const payload = {
   errors: undefined,
 };
 
-const urlRoot = "https://api.test.com/";
+const urlRoot = "https://TestDataHandlers.ts/";
 
 export const handlers = [
   rest.get(urlRoot + "test", (req, res, ctx) => {
