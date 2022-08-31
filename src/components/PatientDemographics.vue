@@ -15,7 +15,7 @@ const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
 <template>
   <n-card :title="displayName">
     <template #header-extra>
-      {{ props.patient.age }} ({{ props.patient.dob.toLocaleDateString() }})
+      {{ props.patient.age }}
       <GenderIcon :gender="props.patient.gender" />
     </template>
     <n-descriptions label-placement="top" title="patient information:">
@@ -24,6 +24,9 @@ const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
       </n-descriptions-item>
       <n-descriptions-item label="Medical Record Number">
         {{ props.patient.mrn }}
+      </n-descriptions-item>
+      <n-descriptions-item label="Date Of Birth">
+        {{ props.patient.dob.toLocaleDateString() }}
       </n-descriptions-item>
     </n-descriptions>
     <template #footer> <PatientTagList :tags="props.patient.tags" /> </template>

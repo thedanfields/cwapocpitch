@@ -1,7 +1,7 @@
 @import "./base.css";
 
 #app {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 2rem;
 
@@ -21,15 +21,32 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 2100px) {
   body {
     display: flex;
     place-items: center;
   }
 
+  .header {
+    grid-area: header;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .footer {
+    grid-area: sidebar;
+  }
+
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto;
+      grid-template-rows: 25px auto 50px;
+      grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "footer footer footer footer";
     padding: 0 2rem;
   }
 }
