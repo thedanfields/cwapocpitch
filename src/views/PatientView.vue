@@ -4,6 +4,8 @@ import { InjectionKeys } from "@/constants";
 import type Patient from "@/models/Patient";
 import type { PatientService } from "@/services/PatientService";
 import { inject, onBeforeMount, ref } from "vue";
+import PatientTimeline from "../components/PatientTimeline.vue";
+import { NSpace } from "naive-ui";
 
 interface Props {
   patient_id: string;
@@ -19,10 +21,11 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <main>
-    <div v-if="patient" class="content">
+  <div v-if="patient" class="content">
+    <n-space>
       <PatientDemographics v-bind:patient="patient" />
-    </div>
-    <div v-else>oh-no, patient not found</div>
-  </main>
+      <PatientTimeline />
+    </n-space>
+  </div>
+  <div v-else>oh-no, patient not found</div>
 </template>

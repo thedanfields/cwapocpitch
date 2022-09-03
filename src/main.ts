@@ -28,8 +28,8 @@ class FakePatientService implements IPatientService {
       patientId,
       "united",
       "12345",
-      "first_name_value",
-      "last_name_value",
+      "Billy",
+      "Pilgrim",
       "M",
       new Date(1944, 3, 2),
       tags
