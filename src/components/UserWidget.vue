@@ -6,7 +6,7 @@ interface Props {
   user: User;
 }
 const props = defineProps<Props>();
-const avatarText = `${props.user.firstName[0]}${props.user.lastName[0]}`
+const avatarText = `${props.user.firstName[0]}${props.user.lastName[0]}`;
 </script>
 <template>
   <section class="user-widget">

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { NDivider, NCard, NDescriptions, NDescriptionsItem } from "naive-ui";
+import { NDivider, NDescriptions, NDescriptionsItem } from "naive-ui";
 
 import type Patient from "@/models/Patient";
-import PatientTagList from "./PatientTagList.vue";
-import GenderIcon from "./GenderIcon.vue";
 import PatientCore from "./PatientCore.vue";
 
 interface Props {
@@ -11,7 +9,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
 </script>
 <template>
   <PatientCore :patient="props.patient">

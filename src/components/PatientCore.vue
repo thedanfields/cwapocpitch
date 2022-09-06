@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NDivider, NCard, NDescriptions, NDescriptionsItem } from "naive-ui";
+import { NCard, NDescriptions, NDescriptionsItem } from "naive-ui";
 
 import type Patient from "@/models/Patient";
 import PatientTagList from "./PatientTagList.vue";
@@ -18,6 +18,14 @@ const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
       {{ props.patient.age }}
       <GenderIcon :gender="props.patient.gender" />
     </template>
+    <n-descriptions label-placement="top">
+      <n-descriptions-item label="institution">
+        {{ props.patient.institution }}
+      </n-descriptions-item>
+      <n-descriptions-item label="mrn">
+        {{ props.patient.mrn }}
+      </n-descriptions-item>
+    </n-descriptions>
     <PatientTagList :tags="props.patient.tags" />
     <template #footer>
       <slot></slot>
