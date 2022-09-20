@@ -61,6 +61,7 @@ const user = new User("Dr", "Dog", UserRole.Pharmacist);
 }
 .app-content {
   min-height: 100%;
+  height: 100vh;
   display: grid;
   grid-template-rows: 40px auto 40px;
   row-gap: 1ch;
