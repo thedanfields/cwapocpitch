@@ -14,27 +14,36 @@ const props = defineProps<Props>();
   <PatientCore :patient="props.patient">
     <n-divider title-placement="left">demographics</n-divider>
     <n-descriptions label-placement="top">
-      <n-descriptions-item label="Institution">
-        {{ props.patient.institution }}
+      <n-descriptions-item label="address">
+        <div>
+          <p>address</p>
+          <p>city, state, zip</p>
+        </div>
       </n-descriptions-item>
-      <n-descriptions-item label="Medical Record Number">
-        {{ props.patient.mrn }}
+      <n-descriptions-item label="telephone">
+        <div>
+          <p>888.888.8888 (m)</p>
+          <p>999.999.9999 (h)</p>
+        </div>
       </n-descriptions-item>
-      <n-descriptions-item label="Date Of Birth">
+      <n-descriptions-item label="email">
+        <p>test@test.com</p>
+      </n-descriptions-item>
+      <n-descriptions-item label="date of birth">
         {{ props.patient.dob.toLocaleDateString() }}
       </n-descriptions-item>
     </n-descriptions>
     <n-divider title-placement="left">discharge info</n-divider>
     <n-descriptions label-placement="top">
-      <n-descriptions-item label="Facility">
+      <n-descriptions-item label="facility">
         ...some facility
       </n-descriptions-item>
-      <n-descriptions-item label="Date / Time">
+      <n-descriptions-item label="date / time">
         {{
           `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`
         }}
       </n-descriptions-item>
-      <n-descriptions-item label="Event">
+      <n-descriptions-item label="event">
         Event Link / Component
       </n-descriptions-item>
     </n-descriptions>
