@@ -65,7 +65,9 @@ const user = new User("Dr", "Dog", UserRole.Pharmacist);
   display: grid;
   grid-template-rows: 40px auto 40px;
   row-gap: 1ch;
+  margin: 0 10px;
 }
+
 .app-content .main {
   display: flex;
   flex-flow: row wrap;

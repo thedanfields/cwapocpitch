@@ -70,7 +70,8 @@ function buildFakeData(): FakeDatastore {
     firstName: string,
     lastName: string,
     gender: "M" | "F",
-    dob: Date
+    dob: Date,
+    timeZone: string
   ): Patient {
     const tags = getTags();
     return new Patient(
@@ -81,7 +82,8 @@ function buildFakeData(): FakeDatastore {
       lastName,
       gender,
       dob,
-      tags
+      tags,
+      timeZone
     );
   }
 
@@ -92,7 +94,8 @@ function buildFakeData(): FakeDatastore {
       "Dora",
       "Akunyili",
       "F",
-      new Date(1954, 7, 12)
+      new Date(1954, 7, 12),
+      "America/Los_Angeles"
     ),
     "2": buildPatient(
       "2",
@@ -100,7 +103,8 @@ function buildFakeData(): FakeDatastore {
       "Sabina",
       "Baldoncelli",
       "F",
-      new Date(1781, 2, 6)
+      new Date(1781, 2, 6),
+      "America/Phoenix"
     ),
     "3": buildPatient(
       "3",
@@ -108,7 +112,8 @@ function buildFakeData(): FakeDatastore {
       "Isa Marte",
       "Hussaini",
       "M",
-      new Date(1944, 4, 19)
+      new Date(1944, 4, 19),
+      "America/Denver"
     ),
     "4": buildPatient(
       "4",
@@ -116,7 +121,8 @@ function buildFakeData(): FakeDatastore {
       "Tim",
       "Webster",
       "M",
-      new Date(1946, 10, 9)
+      new Date(1946, 10, 9),
+      "America/Chicago"
     ),
   };
 

@@ -9,6 +9,7 @@ export default class Patient {
   gender: string;
   dob: Date;
   tags: PatientTag[];
+  time_zone: string;
 
   constructor(
     id: string,
@@ -18,7 +19,8 @@ export default class Patient {
     last_name: string,
     gender: string,
     dob: Date,
-    tags: PatientTag[]
+    tags: PatientTag[],
+    time_zone: string
   ) {
     this.id = id;
     this.institution = institution;
@@ -28,6 +30,7 @@ export default class Patient {
     this.gender = gender;
     this.dob = dob;
     this.tags = tags;
+    this.time_zone = time_zone;
   }
 
   get display_name(): string {

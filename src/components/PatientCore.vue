@@ -4,6 +4,7 @@ import { NCard, NDescriptions, NDescriptionsItem } from "naive-ui";
 import type Patient from "@/models/Patient";
 import PatientTagList from "./PatientTagList.vue";
 import GenderIcon from "./GenderIcon.vue";
+import CurrentTime from "./CurrentTime.vue";
 
 interface Props {
   patient: Patient;
@@ -24,6 +25,9 @@ const displayName = `${props.patient.last_name}, ${props.patient.first_name}`;
       </n-descriptions-item>
       <n-descriptions-item label="mrn">
         {{ props.patient.mrn }}
+      </n-descriptions-item>
+      <n-descriptions-item label="local time">
+        <CurrentTime :time-zone="props.patient.time_zone" />
       </n-descriptions-item>
     </n-descriptions>
     <PatientTagList :tags="props.patient.tags" />
