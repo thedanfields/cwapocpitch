@@ -15,7 +15,14 @@ const taskTitle = `${UserTaskType[props.task.type]}`;
     <div class="task">
       <main><slot></slot></main>
       <aside>
-        <PatientCore :patient="props.task.patient" />
+        <router-link
+          :to="{
+            name: 'patient',
+            params: { patient_id: props.task.patient.id },
+          }"
+        >
+          <PatientCore :patient="props.task.patient" />
+        </router-link>
       </aside>
     </div>
   </n-card>
