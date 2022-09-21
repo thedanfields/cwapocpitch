@@ -10,18 +10,18 @@ const props = defineProps<Props>();
 
 <template>
   <n-descriptions label-placement="top">
-    <n-descriptions-item label="Attempt #">
+    <n-descriptions-item label="attempt #">
       {{ props.task.attemptNumber }}
     </n-descriptions-item>
-    <n-descriptions-item label="Discharge Facility">
+    <n-descriptions-item label="discharge facility">
       ...some facility
     </n-descriptions-item>
-    <n-descriptions-item label="Discharge Date / Time">
+    <n-descriptions-item label="discharge date / time">
       {{
         `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`
       }}
     </n-descriptions-item>
-    <n-descriptions-item label="Discharge Event">
+    <n-descriptions-item label="discharge event">
       Event Link / Component
     </n-descriptions-item>
   </n-descriptions>
