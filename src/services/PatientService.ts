@@ -12,7 +12,7 @@ export class PatientService implements IPatientService {
   }
 
   async getById(patientId: string): Promise<Patient> {
-    const resourceUrl = `http://api.test.com/patients/${patientId}`;
+    const resourceUrl = `patients/${patientId}`;
     return await this.dataService.get<Patient>(resourceUrl);
   }
 }
