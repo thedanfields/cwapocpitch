@@ -11,6 +11,7 @@ import Patient from "./models/Patient";
 import PatientTag, { PatientTagSeverity } from "./models/PatientTag";
 import { EnrollmentAttemptTask, MRPTask, UserTask } from "./models/UserTask";
 import type { IUserTaskService } from "./services/UserTaskService";
+import { TimeService } from "./services/TimeService";
 
 const app = createApp(App);
 
@@ -40,8 +41,10 @@ class FakeUserTaskService implements IUserTaskService {
     throw new Error("Method not implemented.");
   }
 }
+
 app.provide(InjectionKeys.PatientService, new FakePatientService());
 app.provide(InjectionKeys.UserTaskService, new FakeUserTaskService());
+app.provide(InjectionKeys.TimeService, new TimeService());
 
 app.mount("#app");
 

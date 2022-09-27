@@ -1,19 +1,22 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { InjectionKeys } from "@/constants";
+import type { ITimeService } from "@/services/TimeService";
+import { inject, onMounted, ref } from "vue";
 
 interface Props {
   timeZone: string;
 }
 const props = defineProps<Props>();
-
+const timeService = inject(InjectionKeys.TimeService) as ITimeService;
 const currentTime = ref(getTime());
 
 function getTime() {
-  const current = new Date(
-    new Date().toLocaleString("en-US", {
-      timeZone: props.timeZone,
-    })
-  ).toLocaleString("en-US", { hour: "numeric", minute: "numeric" });
+  const current = timeService
+    .getCurrentTime(props.timeZone)
+    .toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+    });
   return current;
 }
 
